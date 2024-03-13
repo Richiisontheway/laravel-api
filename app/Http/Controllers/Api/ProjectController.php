@@ -10,7 +10,8 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::all();
+        //paginate serve per dividerci in pagine le risposte api
+        $projects = Project::with('type','technology')->paginate(5);
         return response()->json([
             'success' => true,
             'result' => $projects
