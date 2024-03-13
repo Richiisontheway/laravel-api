@@ -22,7 +22,7 @@ Route::name('api.')->group(function(){
         return $request->user();
     });
     
-    Route::resource('posts', ProjectController::class)->only(
+    Route::resource('projects', ProjectController::class)->only(
         'index',
         'show'
     );
